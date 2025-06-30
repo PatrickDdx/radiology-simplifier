@@ -15,7 +15,7 @@ Built with Streamlit + OpenAI by a medical student to save time and reduce confu
 
 ## 🚀 Try it now
 
-👉 [Launch the app](https://YOUR-APP-URL.streamlit.app)
+👉 [Launch the app](https://understand-my-scan.streamlit.app/)
 
 ## ⚠️ Disclaimer
 
