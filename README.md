@@ -1,6 +1,4 @@
-# radiology-simplifier
-Understand your radiology report in clear, kind language.
-a# 🧾 Radiology Report Simplifier
+# 🧾 Radiology Report Simplifier
 
 This tool helps patients understand radiology reports in simple, clear language.
 
