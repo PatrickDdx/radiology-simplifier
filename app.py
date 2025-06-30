@@ -4,8 +4,7 @@ from dotenv import load_dotenv
 import requests
 from datetime import datetime
 from langdetect import detect
-
-from streamlit import session_state
+import os
 
 # Load environment variables
 load_dotenv()
@@ -115,7 +114,16 @@ if st.button("✨ Simplify Report"):
                 # Format user input
                 report_text = f"\"\"\"\n{report_input}\n\"\"\""
 
-                client = OpenAI()  # uses key from environment automatically
+                # Get OpenAI API key
+                api_key = os.getenv("OPENAI_API_KEY") or st.secrets.get("OPENAI_API_KEY")
+
+                if not api_key:
+                    st.error("❌ OpenAI API key not found. Please set it in .env or Streamlit secrets.")
+                    st.stop()
+
+                client = OpenAI(api_key=api_key)
+
+                #client = OpenAI()  # uses key from environment automatically
 
                 response = client.chat.completions.create(
                     model="gpt-4o-mini",
